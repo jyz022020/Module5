@@ -1,5 +1,6 @@
 var currentTimeRawArray = moment().format('h a').split(" ");
 var currHour = parseInt(currentTimeRawArray[0]);
+var currDate = moment().format('L');
 var currpmam = currentTimeRawArray[1];
 if (currpmam === "pm" && currHour != 12) {
     currHour = currHour + 12;
@@ -26,12 +27,12 @@ for (var i=9; i<18; i++) {
         textBlock.addClass("future");
     }
     textBlock.addClass("text-block");
-    textBlock.text(getTaskFromStorage(i));
+    textBlock.text(getTaskFromStorage(i + currDate));
     var timeBlock = $("<div></div>");
     timeBlock.text(abs_time + ampm);
     timeBlock.addClass("time-block");
     timeBlock.addClass("hour");
-    var saveButton = $("<button id='saveButton' value=" + i + "/>");
+    var saveButton = $("<button id='saveButton' value=" + i + "> Save </button>");
     saveButton.addClass("saveBtn");
     var row = $("<div class = 'timeBlockRow'/>");
     row.append(timeBlock);
@@ -56,5 +57,5 @@ function setTaskToStorage(key, value) {
 $( ".saveBtn" ).click(function() {
     var index = this.value;
     var value = $("#textBlock-" + index).val();
-    setTaskToStorage(index, value);
+    setTaskToStorage(index + currDate, value);
   });
