@@ -14,7 +14,7 @@ textarea{
 }
 
 .text-block {
-  width: 40%;
+  width: 65%;
 }
 
 .jumbotron {
@@ -30,9 +30,11 @@ textarea{
 }
 
 .time-block{
+  text-align: center;
   display: inline-block;
   vertical-align: middle;
   border-radius: 0px;
+  width: 5%;
 }
 
 .row {
@@ -76,6 +78,6 @@ textarea{
 }
 
 .container {
-  margin-left: 30%;
-  margin-right: 30%;
+  margin-left: 20%;
+  margin-right: 15%;
 }
