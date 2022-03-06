@@ -30,7 +30,8 @@ textarea{
 }
 
 .time-block{
-  text-align: center;
+  display: inline-block;
+  vertical-align: middle;
   border-radius: 0px;
 }
 
